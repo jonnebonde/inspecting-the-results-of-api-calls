@@ -1,7 +1,7 @@
 const resultsContainer = document.querySelector(".results");
 
-const url = "https://cat-fact.herokuapp.com/facts";
-// const url = "https://api.rawg.io/api/games";
+// const url = "https://noroff.herokuapp.com/v1/cat-facts/facts";
+const url = "https://api.rawg.io/api/games?key=54582cd735a340b89b17702eae51578b";
 
 async function callApi() {
     const response = await fetch(url);
@@ -9,10 +9,10 @@ async function callApi() {
 
     console.log(json);
 
-    const results = json.all;
+    const results = json.results;
 
     results.forEach(function (result) {
-        resultsContainer.innerHTML += `<div>${result.upvotes}</div>`;
+        resultsContainer.innerHTML += `<div>${result.name}</div>`;
     });
 }
 
