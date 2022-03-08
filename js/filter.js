@@ -65,5 +65,52 @@ function filterNames(name) {
     }
 }
 
+
+// function filterNames(name) {
+//     if(name.toLowerCase().includes("a")) {
+//         return true;
+//     }
+// }
+
+
+// arrow function
+
+// const filteredNames = names.filter((name) => name.toLowerCase().includes("a"));
+
 console.log(names);
 console.log(filteredNames)
+
+
+// filter method with objects
+
+const people = [{ id: 1, name: "Alice"}, { id: 2, name: "Anders"}, { id: 3, name: "Mari"}];
+
+const filteredPeople = people.filter(filterPeople);
+
+function filterPeople(person) {
+
+    if(person.name.toLowerCase().startsWith("a")) {
+        return true;
+    }
+}
+
+
+// noname function 
+
+/* const filteredPeople = people.filter(function(person) {
+    if(person.name.toLowerCase().startsWith("m")) {
+        return true;
+    }
+}); */
+
+
+// Arrow function *dont recommend converting to one line, it becomes unreadable
+
+/* const filteredPeople = people.filter((person) => {
+    if(person.name.toLowerCase().startsWith("m")) {
+        return true;
+    }
+}); */
+
+console.table(people);
+console.table(filteredPeople)
